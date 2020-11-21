@@ -18,7 +18,8 @@ import com.example.myhotels.Util.Reader;
 import com.example.myhotels.Util.User;
 
 public class LoginAcitvity extends AppCompatActivity {
-    EditText namer;
+    EditText namer,mypass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +31,11 @@ public class LoginAcitvity extends AppCompatActivity {
         User user = null;
         user = Reader.getUserList(getApplicationContext());
         namer = findViewById(R.id.username);
+        mypass = findViewById(R.id.mypassword);
+
         String name = namer.getText().toString();
-        if(user.getUsers().contains(name))
+        String pass = mypass.getText().toString();
+        if(user.getUsers().contains(name)  && user.getPasswords().contains(pass) )
         {
             CurrentUser cuser = new CurrentUser(name);
             Intent intent = new Intent(getApplicationContext(),MainActivity.class);

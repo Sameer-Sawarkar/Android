@@ -1,40 +1,71 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="#E82B6B"
 
     android:fitsSystemWindows="true">
 
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.myhotels.LoginAcitvity">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_centerInParent="true">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="UserName"
-                android:id="@+id/username"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:background="#3f76ff"
-                android:textColor="#fff"
-                android:id="@+id/login"
-                android:onClick="doLogin"/>
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="262dp"
+        android:layout_marginEnd="54dp"
+        android:backgroundTint="#7e7e7e"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="username"
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        tools:ignore="RtlCompat" />
 
-        </LinearLayout>
-    </RelativeLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <EditText
+        android:id="@+id/mypassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="54dp"
+        android:backgroundTint="#7e7e7e"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="password"
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mypassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="137dp"
+        android:onClick="doLogin"
+        android:layout_marginRight="137dp"
+        android:background="#B3003D"
+        android:text="Sign Me Up"
+        android:textColor="#ffffff" />
+
+</RelativeLayout>
