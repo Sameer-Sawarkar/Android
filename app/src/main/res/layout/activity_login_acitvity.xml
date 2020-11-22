@@ -1,39 +1,68 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@android:color/holo_purple"
 
     android:fitsSystemWindows="true">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+        <TextView
+            android:id="@+id/MyHotels"
+            android:layout_width="319dp"
+            android:layout_height="119dp"
+            android:layout_marginTop="100dp"
+            android:text="Hostel Guide"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="55dp" />
+
+        <TextView
+            android:layout_width="198dp"
+            android:layout_height="38dp"
+            android:text="    WELCOME"
+
+            android:textColor="@android:color/background_dark"
+            android:textSize="30dp" />
+
+
+    </LinearLayout>
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.myhotels.LoginAcitvity">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_centerInParent="true">
+            android:orientation="vertical">
+
             <EditText
+                android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="UserName"
-                android:id="@+id/username"/>
+                android:hint="UserName" />
+
             <Button
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
                 android:background="#3f76ff"
-                android:textColor="#fff"
-                android:id="@+id/login"
-                android:onClick="doLogin"/>
+                android:onClick="doLogin"
+                android:text="Login"
+                android:textColor="#fff" />
 
         </LinearLayout>
     </RelativeLayout>

@@ -1,7 +1,7 @@
 package com.example.myhotels.Util;
 
 public class HotelView {
-    private String name;
+    public String name;
     private String location;
     private int thumbnail;
     private int rating;

@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private HotelsAdapter adapter;
     private List<HotelView> hotelList;
+    private List<HotelView> hotelListAll;
     private String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
 
         username = CurrentUser.username;
         initCollapsingToolbar();
@@ -54,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView =  findViewById(R.id.recycler_view);
 
         hotelList = new ArrayList<>();
-        adapter = new HotelsAdapter(this, hotelList);
+        hotelListAll = new ArrayList<>();
+        adapter = new HotelsAdapter(this, hotelList, hotelListAll);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 1);
         recyclerView.setLayoutManager(mLayoutManager);
@@ -64,17 +67,30 @@ public class MainActivity extends AppCompatActivity {
 
         prepareHotels();
 
+        /*SearchView mySearchView = (SearchView) findViewById(R.id.searchView);
+        mySearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.getFilter().filter(newText);
+                return true;
+            }
+        });*/
+
         try {
             Glide.with(this).load(R.drawable.back).into((ImageView) findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
 
-    /**
-     * Initializing collapsing toolbar
-     * Will show and hide the toolbar title on scroll
-     */
+    // Initializing collapsing toolbar Will show and hide the toolbar title on scroll
     private void initCollapsingToolbar() {
         final CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
@@ -93,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     scrollRange = appBarLayout.getTotalScrollRange();
                 }
                 if (scrollRange + verticalOffset == 0) {
-                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    collapsingToolbar.setTitle("Hostels/PG");
                     isShow = true;
 
                 } else if (isShow) {
@@ -121,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         return null;
     }
+
     private void prepareHotels() {
         int[] cover = {R.drawable.hicon1,
                 R.drawable.hicon2,
@@ -154,30 +171,27 @@ public class MainActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    /**
-     * RecyclerView item decoration - give equal margin around grid item
-     */
-
-
-    /**
-     * Converting dp to pixel
-     */
+    //RecyclerView item decoration - give equal margin around grid item
+    //Converting dp to pixel
     private int dpToPx(int dp) {
         Resources r = getResources();
         return Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics()));
     }
+
     @Override
     public void onBackPressed() {
         finishAffinity();
 
         System.exit(0);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_hotel, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection

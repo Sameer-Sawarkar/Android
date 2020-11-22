@@ -44,42 +44,44 @@
 
 
 </android.widget.RelativeLayout>
+
     <RelativeLayout
-        android:layout_alignBottom="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/cardView">
 
         <TextView
             android:id="@+id/View_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/hotel_title_padding"
-            android:paddingRight="@dimen/hotel_title_padding"
             android:paddingTop="@dimen/hotel_title_padding"
-            android:textAlignment="center"
+            android:paddingRight="@dimen/hotel_title_padding"
+            android:textAlignment="inherit"
             android:textColor="@color/hotel_title"
-            android:textSize="35sp" />
+            android:textSize="50sp" />
 
         <TextView
             android:id="@+id/View_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/View_title"
-            android:textColor="@android:color/background_dark"
-            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
             android:paddingLeft="@dimen/hotel_title_padding"
             android:paddingRight="@dimen/hotel_title_padding"
-            android:textSize="20dp" />
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp" />
+
         <TextView
             android:id="@+id/View_rating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/View_location"
-            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
             android:paddingLeft="@dimen/hotel_title_padding"
-            android:textColor="@android:color/background_dark"
             android:paddingRight="@dimen/hotel_title_padding"
-            android:textSize="20dp" />
+            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:textColor="@android:color/background_dark"
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/View_features"
@@ -90,8 +92,8 @@
             android:paddingRight="@dimen/hotel_title_padding"
             android:paddingBottom="@dimen/hotel_rating_padding_bottom"
             android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            />
+            android:textSize="15dp" />
+
         <TextView
             android:id="@+id/View_contact"
             android:layout_width="match_parent"
@@ -101,57 +103,55 @@
             android:paddingRight="@dimen/hotel_title_padding"
             android:paddingBottom="@dimen/hotel_rating_padding_bottom"
             android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            />
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/View_book"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="98dp"
+            android:layout_height="35dp"
             android:layout_below="@id/View_contact"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/ic_hotel_overflow_margin_top"
+            android:layout_marginTop="32dp"
             android:background="@drawable/round"
-            android:scaleType="centerCrop"
-            android:text="Book"
-            android:textColor="#ffffff"
-            android:textSize="25dp"
-            android:typeface="monospace"
-            android:bottomRightRadius="20dp"
             android:bottomLeftRadius="20dp"
-            android:topRightRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:scaleType="centerCrop"
+            android:text="Confirm"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
             android:topLeftRadius="20dp"
-            />
+            android:topRightRadius="20dp"
+            android:typeface="monospace" />
+
         <Button
             android:id="@+id/View_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="134dp"
+            android:layout_height="32dp"
             android:layout_below="@id/View_book"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/ic_hotel_overflow_margin_top"
+            android:layout_marginTop="13dp"
             android:background="@drawable/round"
             android:scaleType="centerCrop"
             android:shape="ring"
             android:text="Save for later"
             android:textColor="#ffffff"
-            android:textSize="25dp"
+            android:textSize="14sp"
             android:typeface="monospace"
-
             />
+
         <TextView
             android:id="@+id/View_rec"
             android:layout_width="match_parent"
-            android:paddingTop="20dp"
-            android:text="Recommendations"
-            android:layout_centerHorizontal="true"
             android:layout_height="wrap_content"
             android:layout_below="@id/View_save"
+            android:layout_centerHorizontal="true"
             android:paddingLeft="@dimen/hotel_title_padding"
+            android:paddingTop="20dp"
             android:paddingRight="@dimen/hotel_title_padding"
             android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+            android:text="Recommendations"
             android:textColor="@android:color/background_dark"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
     </RelativeLayout>
 

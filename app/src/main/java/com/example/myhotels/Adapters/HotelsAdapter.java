@@ -6,27 +6,68 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Filter;
+
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myhotels.R;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.example.myhotels.HotelViewer;
 import com.example.myhotels.Util.HotelView;
 
-/**
- * Created by Ravi Tamada on 18/05/16.
- */
-public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.MyViewHolder> {
+
+public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.MyViewHolder> implements Filterable {
 
     private Context mContext;
     private List<HotelView> hotelList;
+    private List<HotelView> hotelListAll;
     public HotelView hotel;
+
+    @Override
+    public Filter getFilter() {
+        return filter;
+    }
+
+    Filter filter = new Filter() {
+        //run on background thread
+        @Override
+        protected FilterResults performFiltering(CharSequence charSequence) {
+
+            List<HotelView> filteredList = new ArrayList<>();
+
+            if(charSequence.toString().isEmpty()){
+                filteredList.addAll(hotelList);
+            }else{
+                for(HotelView h: hotelList){
+                    if(h.name.toLowerCase().contains(charSequence.toString().toLowerCase())){
+                        filteredList.add(h);
+                    }
+                }
+            }
+
+            FilterResults filterResults = new FilterResults();
+            filterResults.values = filteredList;
+            return filterResults;
+        }
+
+        //run on ui thread
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            hotelList.clear();
+            hotelList.addAll((Collection<? extends HotelView>) filterResults.values);
+            notifyDataSetChanged();
+
+        }
+    };
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, location,rating,features;
@@ -44,9 +85,10 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.MyViewHold
     }
 
 
-    public HotelsAdapter(Context mContext, List<HotelView> hotelList) {
+    public HotelsAdapter(Context mContext, List<HotelView> hotelList, List<HotelView> hotelListAll) {
         this.mContext = mContext;
         this.hotelList = hotelList;
+        this.hotelListAll = new ArrayList<>(hotelListAll);
     }
 
     @Override
@@ -83,4 +125,5 @@ public class HotelsAdapter extends RecyclerView.Adapter<HotelsAdapter.MyViewHold
     public int getItemCount() {
         return hotelList.size();
     }
+
 }

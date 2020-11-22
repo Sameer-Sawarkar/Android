@@ -5,4 +5,5 @@
         android:id="@+id/show_bookings"
         android:orderInCategory="100"
         android:title="Bookings" />
+
 </menu>
