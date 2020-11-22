@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name":"Kamal Hotel",
+    "name":"Kamal Hostel",
     "contact":"7744987886",
     "location":"Nagpur , Maharastra",
     "features":["Free wifi" , "Cabs available"],
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "name":"Baba Inn",
+    "name":"Girls Hostel",
     "contact":"4477876887",
     "location":"Mumbai , Maharastra",
     "features":["Free wifi" , "Free brunch"],
@@ -17,15 +17,15 @@
   },
   {
     "id": 3,
-    "name":"Khaanji Hotel",
+    "name":"Sunny PG",
     "contact":"8923674512",
-    "location":"Delhi NCR",
+    "location":"Shivaji Nagar",
     "features":["Honeymoon" , "Free brunch"],
     "rating" : 3
   },
   {
     "id": 4,
-    "name":"Gandhi Inn",
+    "name":"Gandhi PG",
     "contact":"08375924323",
     "location":"Mumbai, Maharastra",
     "features":["Free wifi" , "Beach View"],
@@ -33,15 +33,15 @@
   },
   {
     "id": 5,
-    "name":"Taj Hotels",
+    "name":"Taj Hostels",
     "contact":"4477876887",
-    "location":"Kolkata",
+    "location":"Katraj",
     "features":["Cabs Available" , "Free brunch"],
     "rating" : 4
   },
   {
     "id": 6,
-    "name":"Hotel Goa",
+    "name":"Hostel Boys",
     "contact":"4477876887",
     "location":"Mumbai, Maharastra",
     "features":["Beach View" , "Free brunch"],
@@ -49,9 +49,9 @@
   },
   {
     "id": 7,
-    "name":"Darshan",
+    "name":"Darshan PG",
     "contact":"8768468325",
-    "location":"Delhi NCR",
+    "location":"Nigdi",
     "features":["Near Airport" , "Honeymoon"],
     "rating" : 5
   },
@@ -59,22 +59,22 @@
     "id": 8,
     "name":"Laxmi Nivas",
     "contact":"67979871340",
-    "location":"Kolkata",
+    "location":"Solhapur",
     "features":["Cabs Available" , "Free brunch"],
     "rating" : 2
   },
   {
     "id": 9,
-    "name":"Orange City",
+    "name":"Orange City Hostels",
     "contact":"987868219",
     "location":"Mumbai , Maharastra",
     "features":["Ac Room" , "Free brunch"],
     "rating" : 2
   },{
   "id": 10,
-  "name":"Legend Inn",
+  "name":"Legend PG",
   "contact":"9867523423",
-  "location":"Kolkata",
+  "location":"Kolhapur",
   "features":["Ac Room" , "Cabs Available"],
   "rating" : 4
 }
