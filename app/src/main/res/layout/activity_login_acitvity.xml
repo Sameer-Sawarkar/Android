@@ -4,102 +4,111 @@
     android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E82B6B"
+    android:background="#000000"
     android:fitsSystemWindows="true">
 
 
+    <TextView
+        android:layout_width="222dp"
+        android:layout_height="37dp"
+        android:layout_centerHorizontal="true"
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:layout_marginTop="60dp">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:gravity="center"
+        android:hint="type here"
+        android:text="Dont Have an account? "
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/MyHotels"
-            android:layout_width="400dp"
-            android:layout_height="119dp"
-            android:text="  HOSTEL GUIDE"
-            android:textColor="@android:color/holo_blue_bright"
-            android:textSize="50dp" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="140dp"
+        android:layout_height="43dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:gravity="center"
+        android:hint="type here"
+        android:text="Hostel Guide"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
 
-
-    </LinearLayout>
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.example.myhotels.LoginAcitvity">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:orientation="vertical">
-
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/username"
+    <EditText
+        android:id="@+id/edtPhone"
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        android:backgroundTint="#7e7e7e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginEnd="54dp"
-        android:backgroundTint="#7e7e7e"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="username"
+        android:hint="Phone Number"
         android:inputType="textPersonName"
         android:textAlignment="textStart"
+        tools:ignore="RtlCompat"
+        android:text=""
+        />
+
+    <EditText
+        android:id="@+id/edtPassword"
         android:textColor="#ffffff"
         android:textColorHint="#bababa"
-        tools:ignore="RtlCompat" />
-
-        <EditText
-        android:id="@+id/mypassword"
+        android:backgroundTint="#7e7e7e"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPhone"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="46dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="54dp"
-        android:backgroundTint="#7e7e7e"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="password"
+        android:hint="Password "
         android:inputType="textPersonName"
+        android:password="true"
+
         android:textAlignment="textStart"
+        tools:ignore="RtlCompat"
+        android:text="" />
+
+    <Button
+        android:id="@+id/button"
         android:textColor="#ffffff"
-        android:textColorHint="#bababa"
-        tools:ignore="RtlCompat" />
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Login"/>
 
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="125dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/mypassword"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="144dp"
-            android:layout_marginLeft="144dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="142dp"
-            android:layout_marginRight="142dp"
-            android:background="#B3003D"
-            android:onClick="doLogin"
-            android:text="LOGIN"
-            android:textColor="#ffffff" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword"
+        android:layout_marginTop="255dp"
+        android:text="Go to SignUp"
+        android:layout_centerHorizontal="true"
 
-    </RelativeLayout>
+        android:textColor="#ffffff" />
+
+
 </RelativeLayout>
