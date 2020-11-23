@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical">
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.widget.RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
    >
@@ -23,8 +23,8 @@
 
         <com.smarteist.autoimageslider.SliderView
             android:id="@+id/imageSlider"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_width="366dp"
+            android:layout_height="263dp"
             app:sliderAnimationDuration="600"
             app:sliderAutoCycleDirection="back_and_forth"
             app:sliderAutoCycleEnabled="true"
@@ -52,8 +52,8 @@
 
         <TextView
             android:id="@+id/View_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="389dp"
+            android:layout_height="90dp"
             android:paddingLeft="@dimen/hotel_title_padding"
             android:paddingTop="@dimen/hotel_title_padding"
             android:paddingRight="@dimen/hotel_title_padding"
@@ -96,8 +96,8 @@
 
         <TextView
             android:id="@+id/View_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="389dp"
+            android:layout_height="47dp"
             android:layout_below="@id/View_features"
             android:paddingLeft="@dimen/hotel_title_padding"
             android:paddingRight="@dimen/hotel_title_padding"
@@ -109,9 +109,16 @@
             android:id="@+id/View_book"
             android:layout_width="98dp"
             android:layout_height="35dp"
-            android:layout_below="@id/View_contact"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
+            android:layout_below="@+id/View_contact"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="156dp"
+            android:layout_marginLeft="156dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="156dp"
+            android:layout_marginRight="156dp"
             android:background="@drawable/round"
             android:bottomLeftRadius="20dp"
             android:bottomRightRadius="20dp"
@@ -124,39 +131,99 @@
             android:typeface="monospace" />
 
         <Button
+            android:id="@+id/view_location"
+            android:layout_width="98dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/View_contact"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="157dp"
+            android:layout_marginLeft="157dp"
+            android:layout_marginTop="-24dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginRight="155dp"
+            android:background="@drawable/round"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:scaleType="centerCrop"
+            android:text="@string/loc"
+
+            android:textColor="#ffffff"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="15dp"
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp"
+            android:typeface="monospace" />
+
+        <Button
+            android:id="@+id/view_payment"
+            android:layout_width="98dp"
+            android:layout_height="35dp"
+            android:layout_below="@+id/View_contact"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="157dp"
+            android:layout_marginLeft="157dp"
+            android:layout_marginTop="57dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginRight="155dp"
+            android:background="@drawable/round"
+            android:bottomLeftRadius="20dp"
+            android:bottomRightRadius="20dp"
+            android:scaleType="centerCrop"
+            android:text="@string/pay"
+
+            android:textColor="#ffffff"
+            android:textColorHighlight="#FFFFFF"
+            android:textColorLink="#FFFFFF"
+            android:textSize="15dp"
+            android:topLeftRadius="20dp"
+            android:topRightRadius="20dp"
+            android:typeface="monospace" />
+
+        <Button
             android:id="@+id/View_save"
             android:layout_width="134dp"
             android:layout_height="32dp"
             android:layout_below="@id/View_book"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="140dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="137dp"
+            android:layout_marginRight="137dp"
             android:background="@drawable/round"
             android:scaleType="centerCrop"
             android:shape="ring"
             android:text="Save for later"
             android:textColor="#ffffff"
             android:textSize="14sp"
-            android:typeface="monospace"
-            />
-
-        <TextView
-            android:id="@+id/View_rec"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/View_save"
-            android:layout_centerHorizontal="true"
-            android:paddingLeft="@dimen/hotel_title_padding"
-            android:paddingTop="20dp"
-            android:paddingRight="@dimen/hotel_title_padding"
-            android:paddingBottom="@dimen/hotel_rating_padding_bottom"
-            android:text="Recommendations"
-            android:textColor="@android:color/background_dark"
-            android:textSize="20dp" />
+            android:typeface="monospace" />
 
     </RelativeLayout>
 
     <include layout="@layout/rec_content_main" />
 
+    <TextView
+        android:id="@+id/View_rec"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_marginTop="-22dp"
+        android:paddingLeft="@dimen/hotel_title_padding"
+        android:paddingTop="20dp"
+        android:paddingRight="@dimen/hotel_title_padding"
+        android:paddingBottom="@dimen/hotel_rating_padding_bottom"
+        android:text="Recommendations"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20dp" />
 
 
 </LinearLayout>

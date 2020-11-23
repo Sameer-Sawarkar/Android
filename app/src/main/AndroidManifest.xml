@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".HotelViewer"
-            android:label="@string/title_activity_hotel_viewer" />
+            android:label="@string/title_activity_hotel_viewer"
+            />
 
         <meta-data
             android:name="com.google.android.actions"
