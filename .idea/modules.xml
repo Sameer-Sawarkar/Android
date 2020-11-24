@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Android.MyHotels.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Android.MyHotels.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyHotels.iml" filepath="$PROJECT_DIR$/MyHotels.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MyHotels.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MyHotels.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="MyHotels/app" />
