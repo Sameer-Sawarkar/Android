@@ -17,4 +17,6 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="loc"><a href="https://goo.gl/maps/or72yUEihmpRbka19" style="color:white;">Location</a></string>
+    <string name="pay"><a href="upi://pay?pa=smrsawarkar1@oksbi%38pn=Sameer%20Sawarkar%38am=100%38aid=uGICAgIC1kb_vKw" style="color:white;">Payment</a></string>
 </resources>

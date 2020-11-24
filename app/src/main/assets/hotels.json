@@ -20,7 +20,7 @@
     "name":"Sunny PG",
     "contact":"8923674512",
     "location":"Shivaji Nagar",
-    "features":["Honeymoon" , "Free brunch"],
+    "features":["Free WiFi" , "Free brunch"],
     "rating" : 3
   },
   {
@@ -52,7 +52,7 @@
     "name":"Darshan PG",
     "contact":"8768468325",
     "location":"Nigdi",
-    "features":["Near Airport" , "Honeymoon"],
+    "features":["Near Airport" , "Peace"],
     "rating" : 5
   },
   {

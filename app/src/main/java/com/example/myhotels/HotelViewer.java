@@ -39,7 +39,7 @@ import com.example.myhotels.Util.Reader;
 import com.example.myhotels.Util.Writer;
 
 import static com.smarteist.autoimageslider.IndicatorView.utils.DensityUtils.dpToPx;
-
+import android.text.method.LinkMovementMethod;
 public class HotelViewer extends AppCompatActivity {
     public String hotelName ;
     public List<Hotel> hotels;
@@ -47,11 +47,18 @@ public class HotelViewer extends AppCompatActivity {
     SliderView sliderView;
     private List<HotelView> hotelList = new ArrayList<>();
     private RecyclerView recyclerView;
+    TextView textView;
     private Rec_HotelsAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel_viewer);
+        textView = findViewById(R.id.view_location);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        textView = findViewById(R.id.view_payment);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+
+
         Intent intent = getIntent();
         hotelName = intent.getStringExtra("hotelname");
         sliderView = findViewById(R.id.imageSlider);
@@ -97,14 +104,14 @@ public class HotelViewer extends AppCompatActivity {
         ArrayList<Bookings> bookings = Reader.getBookingsList(getApplicationContext());
         if(bookings == null)
             return null;
-        for(Bookings book : bookings){
-            String name = book.getName();
+        for(Bookings Save : bookings){
+            String name = Save.getName();
             if(name == null) continue;
 
             if(name.equals(CurrentUser.username))
             {
 
-                return book;
+                return Save;
 
             }
         }
@@ -244,7 +251,7 @@ public class HotelViewer extends AppCompatActivity {
 
                 }
                 else
-                        Toast.makeText(getApplicationContext(),"Already Booked",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Already Booked",Toast.LENGTH_LONG).show();
             }
         });
         viewsave.setOnClickListener(new View.OnClickListener() {
