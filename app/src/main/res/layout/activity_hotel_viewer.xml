@@ -186,28 +186,6 @@
                 android:topRightRadius="20dp"
                 android:typeface="monospace" />
 
-            <Button
-                android:id="@+id/View_save"
-                android:layout_width="134dp"
-                android:layout_height="32dp"
-                android:layout_below="@id/View_book"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginStart="140dp"
-                android:layout_marginLeft="140dp"
-                android:layout_marginTop="44dp"
-                android:layout_marginEnd="137dp"
-                android:layout_marginRight="137dp"
-                android:background="@drawable/round"
-                android:scaleType="centerCrop"
-                android:shape="ring"
-                android:text="Save for later"
-                android:textColor="#ffffff"
-                android:textSize="14sp"
-                android:typeface="monospace" />
-
         </RelativeLayout>
 
         <include layout="@layout/rec_content_main" />
