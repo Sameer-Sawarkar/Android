@@ -104,14 +104,14 @@ public class HotelViewer extends AppCompatActivity {
         ArrayList<Bookings> bookings = Reader.getBookingsList(getApplicationContext());
         if(bookings == null)
             return null;
-        for(Bookings Save : bookings){
-            String name = Save.getName();
+        for(Bookings book : bookings){
+            String name = book.getName();
             if(name == null) continue;
 
             if(name.equals(CurrentUser.username))
             {
 
-                return Save;
+                return book;
 
             }
         }
@@ -167,14 +167,13 @@ public class HotelViewer extends AppCompatActivity {
     public void setValues(String hotelName, Context context){
         /*SETTING VALUES TO THE LAYOUT COMPONENTS*/
         TextView viewtitle , viewlocation , viewrating , viewfeature , viewcontact;
-        final Button viewbook,viewsave;
+        final Button viewbook;
         viewtitle = findViewById(R.id.View_title);
         viewlocation = findViewById(R.id.View_location);
         viewrating = findViewById(R.id.View_rating);
         viewfeature = findViewById(R.id.View_features);
         viewcontact = findViewById(R.id.View_contact);
         viewbook = findViewById(R.id.View_book);
-        viewsave = findViewById(R.id.View_save);
         hotels = Reader.getRestaurantList(context);
 
         for(Hotel hot : hotels) {
@@ -252,61 +251,6 @@ public class HotelViewer extends AppCompatActivity {
                 }
                 else
                     Toast.makeText(getApplicationContext(),"Already Booked",Toast.LENGTH_LONG).show();
-            }
-        });
-        viewsave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String stat = viewsave.getText().toString();
-                if(stat.equalsIgnoreCase("Save for later"))
-                {
-                    viewsave.setText("Saved");
-                    int index = -1;
-                    ArrayList<Drafts> drafts = Reader.getDraftsList(getApplicationContext());
-                    Drafts firstDraft = null;
-                    if(drafts == null){
-                        firstDraft = new Drafts();
-                        firstDraft.setName(CurrentUser.username);
-                        List<Integer> ids = new ArrayList<>();
-                        ids.add(hotel.getId());
-                        firstDraft.setId(ids);
-                        drafts = new ArrayList<>();
-                        drafts.add(firstDraft);
-                        Writer.writeDrafts(getApplicationContext(), drafts);
-                    }
-                    else {
-                        boolean status = false;
-                        for (Drafts book : drafts) {
-                            if (book.getName().equalsIgnoreCase(CurrentUser.username)) {
-                                status = true;
-                                firstDraft = book;
-                                index = drafts.indexOf(book);
-                                //Toast.makeText(getApplicationContext(),book.getId().size(),Toast.LENGTH_LONG).show();
-                                break;
-                            }
-                        }
-                        if (status) {
-                            List<Integer> ids = firstDraft.getId();
-                            if(ids.contains(hotel.getId()))
-                                return;
-                            ids.add(hotel.getId());
-                            drafts.remove(index);
-                            firstDraft.setId(ids);
-                            drafts.add(firstDraft);
-
-                        } else {
-                            firstDraft = new Drafts();
-                            firstDraft.setName(CurrentUser.username);
-                            List<Integer> ids = new ArrayList<>();
-                            ids.add(hotel.getId());
-                            firstDraft.setId(ids);
-                            drafts.add(firstDraft);
-                        }
-                        Writer.writeDrafts(getApplicationContext(), drafts);
-                    }
-                }
-                else
-                    Toast.makeText(getApplicationContext(),"Already Saved",Toast.LENGTH_LONG).show();
             }
         });
     }
