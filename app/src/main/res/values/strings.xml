@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">MyHotels</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="loc"><a href="https://goo.gl/maps/or72yUEihmpRbka19" style="color:white;">Location</a></string>
-    <string name="pay"><a href="upi://pay?pa=smrsawarkar1@oksbi%38pn=Sameer%20Sawarkar%38am=100%38aid=uGICAgIC1kb_vKw" style="color:white;">Payment</a></string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
     <string name="action_settings">Settings</string>
@@ -10,7 +8,7 @@
     <string name="backdrop_subtitle">Book your favourite</string>
     <string name="book_hotel">Book</string>
     <string name="draft_book">Add to Drafts</string>
-    <string name="title_activity_hotel_viewer">Hostels</string>
+    <string name="title_activity_hotel_viewer">Sign in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -19,4 +17,6 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="loc"><a href="https://goo.gl/maps/or72yUEihmpRbka19" style="color:white;">Location</a></string>
+    <string name="pay"><a href="upi://pay?pa=smrsawarkar1@oksbi%38pn=Sameer%20Sawarkar%38am=100%38aid=uGICAgIC1kb_vKw" style="color:white;">Payment</a></string>
 </resources>

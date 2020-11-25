@@ -8,14 +8,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main">
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:queryHint="Search Here"
-        android:iconifiedByDefault="false"
-        android:id="@+id/searchView">
-    </SearchView>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -26,3 +18,5 @@
         android:scrollbars="vertical" />
 
 </RelativeLayout>
+
+

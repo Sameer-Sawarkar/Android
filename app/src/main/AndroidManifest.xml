@@ -15,8 +15,7 @@
         <activity android:name=".signup"></activity>
         <activity
             android:name=".HotelViewer"
-            android:label="@string/title_activity_hotel_viewer"
-            />
+            android:label="@string/title_activity_hotel_viewer" />
 
         <meta-data
             android:name="com.google.android.actions"
@@ -26,8 +25,7 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

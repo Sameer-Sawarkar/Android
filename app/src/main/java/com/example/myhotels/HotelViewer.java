@@ -104,14 +104,14 @@ public class HotelViewer extends AppCompatActivity {
         ArrayList<Bookings> bookings = Reader.getBookingsList(getApplicationContext());
         if(bookings == null)
             return null;
-        for(Bookings book : bookings){
-            String name = book.getName();
+        for(Bookings Save : bookings){
+            String name = Save.getName();
             if(name == null) continue;
 
             if(name.equals(CurrentUser.username))
             {
 
-                return book;
+                return Save;
 
             }
         }
@@ -251,7 +251,7 @@ public class HotelViewer extends AppCompatActivity {
 
                 }
                 else
-                        Toast.makeText(getApplicationContext(),"Already Booked",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Already Booked",Toast.LENGTH_LONG).show();
             }
         });
         viewsave.setOnClickListener(new View.OnClickListener() {
