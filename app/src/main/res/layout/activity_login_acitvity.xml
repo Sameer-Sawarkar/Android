@@ -32,11 +32,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="140dp"
-        android:layout_height="43dp"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="114dp"
+        android:layout_marginTop="113dp"
         android:gravity="center"
         android:hint="type here"
         android:text="Hostel Guide"
