@@ -3,7 +3,7 @@
     "id": 1,
     "name":"Kamal Hostel",
     "contact":"7744987886",
-    "location":"Nagpur , Maharastra",
+    "location":"Nagpur , Maharashtra",
     "features":["Free wifi" , "Cabs available"],
     "rating" : 5
   },
@@ -19,7 +19,7 @@
     "id": 3,
     "name":"Sunny PG",
     "contact":"8923674512",
-    "location":"Shivaji Nagar",
+    "location":"Nagpur , Maharashtra",
     "features":["Free WiFi" , "Free brunch"],
     "rating" : 3
   },
