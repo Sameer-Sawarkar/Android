@@ -35,7 +35,7 @@
     "id": 5,
     "name":"Taj Hostels",
     "contact":"4477876887",
-    "location":"Katraj",
+    "location":"Nigdi",
     "features":["Cabs Available" , "Free brunch"],
     "rating" : 4
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "name":"Laxmi Nivas",
     "contact":"67979871340",
-    "location":"Solhapur",
+    "location":"Kolhapur",
     "features":["Cabs Available" , "Free brunch"],
     "rating" : 2
   },

@@ -7,15 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".signup">
 
+
     <EditText
         android:id="@+id/edtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edtTitle"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="155dp"
-        android:layout_marginEnd="48dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="49dp"
         android:layout_marginBottom="349dp"
         android:backgroundTint="#7e7e7e"
         android:ems="10"
@@ -28,11 +30,19 @@
         tools:ignore="RtlCompat" />
 
     <TextView
-        android:layout_width="140dp"
-        android:layout_height="43dp"
+        android:id="@+id/edtTitle"
+        android:layout_width="288dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="89dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
         android:backgroundTint="#7e7e7e"
         android:gravity="center"
         android:hint="type here"
@@ -42,17 +52,17 @@
         android:textColorHint="#bababa"
         android:textSize="24sp" />
 
-
     <EditText
         android:id="@+id/edtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/edtName"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="213dp"
-        android:layout_marginEnd="46dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="49dp"
         android:backgroundTint="#7e7e7e"
         android:ems="10"
         android:gravity="center"
@@ -107,12 +117,19 @@
 
     <Button
         android:id="@+id/btnSignUp"
-        android:textColor="#ffffff"
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Sign Me Up"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginLeft="143dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginRight="143dp"
+        android:text="Sign Me Up"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>
