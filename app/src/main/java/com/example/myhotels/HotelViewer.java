@@ -272,7 +272,7 @@ public class HotelViewer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"No Bookings for you",Toast.LENGTH_LONG).show();
                 else {
                     List<Integer> ids = booking.getId();
-                    String res = "";
+                    String res = " ";
                     for(Hotel h : hotels) {
 
                         if(ids.contains(h.getId())) {
