@@ -26,7 +26,6 @@
                     android:layout_width="366dp"
                     android:layout_height="263dp"
                     app:sliderAnimationDuration="600"
-                    app:sliderAutoCycleDirection="back_and_forth"
                     app:sliderAutoCycleEnabled="true"
                     app:sliderCircularHandlerEnabled="true"
                     app:sliderIndicatorAnimationDuration="600"

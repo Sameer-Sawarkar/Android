@@ -5,6 +5,7 @@ package com.example.myhotels;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,8 +28,15 @@ import com.example.myhotels.Util.CurrentUser;
 import com.example.myhotels.Util.Reader;
 import com.example.myhotels.Util.User;
 
-public class LoginAcitvity extends AppCompatActivity {
+import java.security.MessageDigest;
 
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+
+public class LoginAcitvity extends AppCompatActivity {
+    String AES = "AES",fdecryPass;
+    String decryptedPass;
     EditText edtPhone,edtPassword;
     Button login,gotosignup;
     FirebaseDatabase database;
@@ -46,6 +54,13 @@ public class LoginAcitvity extends AppCompatActivity {
         //Init Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("user");
+
+        try {
+             decryptedPass = decrypt(edtPassword.getText().toString(), edtPhone.getText().toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         gotosignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +85,12 @@ public class LoginAcitvity extends AppCompatActivity {
                         if(dataSnapshot.child(edtPhone.getText().toString()).exists()) {
                             // get user information
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
-                            if (user.getPassword().equals(edtPassword.getText().toString())) {
+                            try {
+                                fdecryPass = decrypt(user.getPassword(),edtPhone.getText().toString());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            if (fdecryPass == decryptedPass) {
 
                                 Intent MainPage = new Intent( LoginAcitvity.this, MainActivity.class);
                                 common.currentUser = user;
@@ -99,5 +119,26 @@ public class LoginAcitvity extends AppCompatActivity {
                 });
             }
         });
+    }
+
+    //decryption code
+    private String decrypt(String outputstring, String Password) throws Exception {
+        SecretKey key = generateKey(Password);
+        Cipher c = Cipher.getInstance(AES);
+        c.init(Cipher.DECRYPT_MODE,key);
+        byte[] decodeValue = Base64.decode(outputstring, Base64.DEFAULT);
+        byte[] decValue = c.doFinal(decodeValue);
+        String decryptedValue = new String(decValue);
+        return decryptedValue;
+    }
+
+    // common code for encryption and decryption key generation
+    private SecretKey generateKey(String notes_password) throws Exception{
+        final MessageDigest digest = MessageDigest.getInstance("SHA-256");
+        byte[] bytes = notes_password.getBytes("UTF-8");
+        digest.update(bytes, 0, bytes.length);
+        byte[] key = digest.digest();
+        SecretKey secretKeySpec =  new SecretKeySpec(key, "AES");
+        return secretKeySpec;
     }
 }
