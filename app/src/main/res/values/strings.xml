@@ -17,6 +17,17 @@
     <string name="invalid_username">Not a valid username!</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="loc"><a href="https://goo.gl/maps/or72yUEihmpRbka19" style="color:white;">Location</a></string>
-    <string name="pay"><a href="upi://pay?pa=smrsawarkar1@oksbi%38pn=Sameer%20Sawarkar%38am=100%38aid=uGICAgIC1kb_vKw" style="color:white;">Payment</a></string>
+    <string name="loc"><a style="color:white;" href="https://goo.gl/maps/or72yUEihmpRbka19">Location</a></string>
+    <string name="pay"><a style="color:white;" href="upi://pay?pa=smrsawarkar1@oksbi%38pn=Sameer%20Sawarkar%38am=100%38aid=uGICAgIC1kb_vKw">Payment</a></string>
+    <string name="otp_verification">OTP Verification</string>
+    <string name="we_will_send_you_otp_on_entered_mobile_number">We will send you OTP on entered mobile number</string>
+    <string name="enter_mobile_number">Enter Mobile number</string>
+    <string name="_91">+91-</string>
+    <string name="_1234567890">1234567890</string>
+    <string name="get_otp">Get OTP</string>
+    <string name="enter_the_otp_sent_to">Enter the OTP Sent to</string>
+    <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
+    <string name="resend_otp">RESEND OTP</string>
+    <string name="verify">Verify</string>
+    <string name="verification">verification</string>
 </resources>

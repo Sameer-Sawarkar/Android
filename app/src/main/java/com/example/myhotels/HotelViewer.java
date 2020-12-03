@@ -41,6 +41,7 @@ import com.example.myhotels.Util.Writer;
 import static com.smarteist.autoimageslider.IndicatorView.utils.DensityUtils.dpToPx;
 import android.text.method.LinkMovementMethod;
 public class HotelViewer extends AppCompatActivity {
+    private Button move;
     public String hotelName ;
     public List<Hotel> hotels;
     public Hotel hotel = null;
@@ -57,6 +58,7 @@ public class HotelViewer extends AppCompatActivity {
         textView.setMovementMethod(LinkMovementMethod.getInstance());
         textView = findViewById(R.id.view_payment);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
+        move = findViewById(R.id.verification);
 
 
         Intent intent = getIntent();
@@ -96,6 +98,14 @@ public class HotelViewer extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
         prepareHotelData();
+
+        move.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(HotelViewer.this, SendOTPActivity.class);
+                startActivity(intent2);
+            }
+        });
     }
 
 

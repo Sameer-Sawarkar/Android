@@ -35,6 +35,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class LoginAcitvity extends AppCompatActivity {
+    private long backPressTime;
     String AES = "AES",fdecryPass;
     String decryptedPass;
     EditText edtPhone,edtPassword;
@@ -119,6 +120,19 @@ public class LoginAcitvity extends AppCompatActivity {
                 });
             }
         });
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (backPressTime+2000 > System.currentTimeMillis()){
+            super.onBackPressed();
+            return;
+        } else{
+            Toast.makeText(this, "Press Back again to Exit", Toast.LENGTH_SHORT).show();
+        }
+
+        backPressTime = System.currentTimeMillis();
     }
 
     //decryption code

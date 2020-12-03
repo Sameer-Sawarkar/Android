@@ -8,6 +8,7 @@ import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -64,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(1, dpToPx(10), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+
+
 
         prepareHotels();
 
@@ -193,6 +196,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
@@ -212,6 +216,14 @@ public class MainActivity extends AppCompatActivity {
                     }
                     Toast.makeText(getApplicationContext(),res,Toast.LENGTH_LONG).show();
                 }
+                return true;
+
+            case R.id.Logout:
+                Intent intent3 = new Intent(MainActivity.this,LoginAcitvity.class);
+                startActivity(intent3);
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

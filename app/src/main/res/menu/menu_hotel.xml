@@ -4,4 +4,8 @@
         android:orderInCategory="100"
         android:title="Bookings" />
 
+    <item
+        android:id="@+id/Logout"
+        android:orderInCategory="100"
+        android:title="LogOut" />
 </menu>
