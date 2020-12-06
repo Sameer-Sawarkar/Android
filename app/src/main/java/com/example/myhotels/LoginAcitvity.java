@@ -93,9 +93,13 @@ public class LoginAcitvity extends AppCompatActivity {
                             }
                             if (fdecryPass == decryptedPass) {
 
-                                Intent MainPage = new Intent( LoginAcitvity.this, MainActivity.class);
-                                common.currentUser = user;
-                                startActivity(MainPage);
+                                CurrentUser cuser = new CurrentUser(edtPhone.getText().toString());
+                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(intent);
+                                //Intent MainPage = new Intent( LoginAcitvity.this, MainActivity.class);
+                                //common.currentUser = user;
+                                //startActivity(MainPage);
+                                Toast.makeText(getApplicationContext(), "Sign in Successfullly !", Toast.LENGTH_SHORT).show();
                                 finish();
                                 //Toast.makeText(getApplicationContext(), "Sign in Successfullly !", Toast.LENGTH_SHORT).show();
                                 user.setPhoneNumber(edtPhone.getText().toString());
