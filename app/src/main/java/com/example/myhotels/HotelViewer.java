@@ -56,8 +56,8 @@ public class HotelViewer extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_viewer);
         textView = findViewById(R.id.view_location);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        textView = findViewById(R.id.view_payment);
-        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        //textView = findViewById(R.id.view_payment);
+        //textView.setMovementMethod(LinkMovementMethod.getInstance());
         move = findViewById(R.id.verification);
 
 
@@ -282,11 +282,14 @@ public class HotelViewer extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"No Bookings for you",Toast.LENGTH_LONG).show();
                 else {
                     List<Integer> ids = booking.getId();
-                    String res = " ";
+                    String res = "";
                     for(Hotel h : hotels) {
 
                         if(ids.contains(h.getId())) {
-                            res = res + h.getName() +"\n";
+                            res = h.getName();
+                        }
+                        else{
+                            res = res + "\n"+ h.getName();
                         }
                     }
                     Toast.makeText(getApplicationContext(),res,Toast.LENGTH_LONG).show();

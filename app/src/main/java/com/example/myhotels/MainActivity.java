@@ -211,7 +211,10 @@ public class MainActivity extends AppCompatActivity {
                     for(Hotel h : hotels) {
 
                         if(ids.contains(h.getId())) {
-                            res = res + h.getName() +"\n";
+                            res = h.getName();
+                        }
+                        else{
+                            res = res + "\n"+ h.getName();
                         }
                     }
                     Toast.makeText(getApplicationContext(),res,Toast.LENGTH_LONG).show();
@@ -219,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.Logout:
-                Intent intent3 = new Intent(MainActivity.this,LoginAcitvity.class);
+                Intent intent3 = new Intent(this,LoginAcitvity.class);
                 startActivity(intent3);
-                moveTaskToBack(true);
-                android.os.Process.killProcess(android.os.Process.myPid());
-                System.exit(1);
+                //moveTaskToBack(true);
+                //android.os.Process.killProcess(android.os.Process.myPid());
+                //System.exit(1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
