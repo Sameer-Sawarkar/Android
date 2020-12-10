@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.myhotels">
+    package="com.example.hostel">
 
     <dist:module dist:instant="true" />
 
@@ -14,18 +14,18 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".VerifyOTPActivity"
+        <activity android:name="com.example.hostel.VerifyOTPActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"/>
 
-        <activity android:name=".SendOTPActivity"
+        <activity android:name="com.example.hostel.SendOTPActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize"/>
 
 
-        <activity android:name=".signup" />
+        <activity android:name="com.example.hostel.signup" />
         <activity
-            android:name=".HotelViewer"
+            android:name="com.example.hostel.HotelViewer"
             android:label="@string/title_activity_hotel_viewer" />
 
         <meta-data
@@ -33,7 +33,7 @@
             android:resource="@menu/menu_hotel" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.hostel.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -42,7 +42,7 @@
         </activity>
 
         <activity
-            android:name=".LoginAcitvity"
+            android:name="com.example.hostel.LoginAcitvity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
