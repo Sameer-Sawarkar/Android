@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name":"Kamal Hostel",
+    "contact":"7744987886",
+    "location":"Nagpur , Maharashtra",
+    "features":["Free wifi" , "Cabs available"],
+    "rating" : 5
+  },
+  {
+    "id": 2,
+    "name":"Girls Hostel",
+    "contact":"4477876887",
+    "location":"Mumbai , Maharastra",
+    "features":["Free wifi" , "Free brunch"],
+    "rating" : 3
+  },
+  {
+    "id": 3,
+    "name":"Sunny PG",
+    "contact":"8923674512",
+    "location":"Nagpur , Maharashtra",
+    "features":["Free WiFi" , "Free brunch"],
+    "rating" : 3
+  },
+  {
+    "id": 4,
+    "name":"Gandhi PG",
+    "contact":"08375924323",
+    "location":"Mumbai, Maharastra",
+    "features":["Free wifi" , "Beach View"],
+    "rating" : 4
+  },
+  {
+    "id": 5,
+    "name":"Taj Hostels",
+    "contact":"4477876887",
+    "location":"Nigdi",
+    "features":["Cabs Available" , "Free brunch"],
+    "rating" : 4
+  },
+  {
+    "id": 6,
+    "name":"Hostel Boys",
+    "contact":"4477876887",
+    "location":"Mumbai, Maharastra",
+    "features":["Beach View" , "Free brunch"],
+    "rating" : 3
+  },
+  {
+    "id": 7,
+    "name":"Darshan PG",
+    "contact":"8768468325",
+    "location":"Nigdi",
+    "features":["Near Airport" , "Peace"],
+    "rating" : 5
+  },
+  {
+    "id": 8,
+    "name":"Laxmi Nivas",
+    "contact":"67979871340",
+    "location":"Kolhapur",
+    "features":["Cabs Available" , "Free brunch"],
+    "rating" : 2
+  },
+  {
+    "id": 9,
+    "name":"Orange City Hostels",
+    "contact":"987868219",
+    "location":"Mumbai , Maharastra",
+    "features":["Ac Room" , "Free brunch"],
+    "rating" : 2
+  },{
+  "id": 10,
+  "name":"Legend PG",
+  "contact":"9867523423",
+  "location":"Kolhapur",
+  "features":["Ac Room" , "Cabs Available"],
+  "rating" : 4
+}
+
+]

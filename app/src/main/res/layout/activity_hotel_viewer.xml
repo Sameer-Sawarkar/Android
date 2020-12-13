@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <ScrollView android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent">
+
+
+    <android.widget.RelativeLayout android:layout_height="wrap_content" android:layout_width="match_parent">
+
+
+    <androidx.cardview.widget.CardView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/cardView" app:cardCornerRadius="8dp" android:layout_margin="16dp" android:layout_alignParentTop="true">
+
+    <com.smarteist.autoimageslider.SliderView android:layout_height="263dp" android:layout_width="366dp" android:id="@+id/imageSlider" app:sliderStartAutoCycle="true" app:sliderScrollTimeInSec="1" app:sliderIndicatorUnselectedColor="#FFF" app:sliderIndicatorSelectedColor="#5A5A5A" app:sliderIndicatorRadius="2dp" app:sliderIndicatorPadding="3dp" app:sliderIndicatorOrientation="horizontal" app:sliderIndicatorMargin="15dp" app:sliderIndicatorGravity="center_horizontal|bottom" app:sliderIndicatorAnimationDuration="600" app:sliderCircularHandlerEnabled="true" app:sliderAutoCycleEnabled="true" app:sliderAnimationDuration="600"/>
+
+</androidx.cardview.widget.CardView>
+
+</android.widget.RelativeLayout>
+
+
+    -<RelativeLayout android:layout_height="350dp" android:layout_width="match_parent" android:layout_alignBottom="@+id/cardView">
+
+    <TextView android:layout_height="73dp" android:layout_width="390dp" android:id="@+id/View_title" android:textSize="25dp" android:textColor="@color/hotel_title" android:textAlignment="inherit" android:paddingRight="@dimen/hotel_title_padding" android:paddingTop="@dimen/hotel_title_padding" android:paddingLeft="@dimen/hotel_title_padding"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/View_location" android:textSize="15dp" android:textColor="@android:color/background_dark" android:paddingRight="@dimen/hotel_title_padding" android:paddingLeft="@dimen/hotel_title_padding" android:paddingBottom="@dimen/hotel_rating_padding_bottom" android:layout_below="@id/View_title"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/View_rating" android:textSize="15dp" android:textColor="@android:color/background_dark" android:paddingRight="@dimen/hotel_title_padding" android:paddingLeft="@dimen/hotel_title_padding" android:paddingBottom="@dimen/hotel_rating_padding_bottom" android:layout_below="@id/View_location"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/View_features" android:textSize="15dp" android:textColor="@android:color/background_dark" android:paddingRight="@dimen/hotel_title_padding" android:paddingLeft="@dimen/hotel_title_padding" android:paddingBottom="@dimen/hotel_rating_padding_bottom" android:layout_below="@id/View_rating"/>
+
+    <TextView android:layout_height="45dp" android:layout_width="match_parent" android:id="@+id/View_contact" android:textSize="15dp" android:textColor="@android:color/background_dark" android:paddingRight="@dimen/hotel_title_padding" android:paddingLeft="@dimen/hotel_title_padding" android:paddingBottom="@dimen/hotel_rating_padding_bottom" android:layout_below="@id/View_features"/>
+
+    <Button android:layout_height="30dp" android:layout_width="wrap_content" android:id="@+id/View_book" android:textSize="13dp" android:textColor="#ffffff" android:layout_below="@+id/View_contact" android:typeface="sans" android:topRightRadius="20dp" android:topLeftRadius="20dp" android:text="@string/book_hotel" android:scaleType="centerCrop" android:bottomRightRadius="20dp" android:bottomLeftRadius="20dp" android:background="@drawable/round" android:layout_marginRight="156dp" android:layout_marginEnd="156dp" android:layout_marginTop="45dp" android:layout_marginLeft="156dp" android:layout_marginStart="156dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+
+    <Button android:layout_height="33dp" android:layout_width="wrap_content" android:id="@+id/view_location" android:textSize="13dp" android:textColor="#ffffff" android:layout_below="@+id/View_contact" android:typeface="sans" android:topRightRadius="20dp" android:topLeftRadius="20dp" android:text="@string/loc" android:scaleType="centerCrop" android:bottomRightRadius="20dp" android:bottomLeftRadius="20dp" android:background="@drawable/round" android:layout_marginRight="136dp" android:layout_marginEnd="136dp" android:layout_marginTop="0dp" android:layout_marginLeft="136dp" android:layout_marginStart="136dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:textColorLink="#FFFFFF" android:textColorHighlight="#FFFFFF"/>
+
+    <!--<Buttonandroid:id="@+id/view_payment"android:layout_width="147dp"android:layout_height="31dp"android:layout_below="@+id/View_contact"android:layout_alignParentStart="true"android:layout_alignParentLeft="true"android:layout_alignParentEnd="true"android:layout_alignParentRight="true"android:layout_marginStart="131dp"android:layout_marginLeft="131dp"android:layout_marginTop="77dp"android:layout_marginEnd="133dp"android:layout_marginRight="133dp"android:background="@drawable/round"android:bottomLeftRadius="20dp"android:bottomRightRadius="20dp"android:scaleType="centerCrop"android:text="@string/pay"android:textColor="#ffffff"android:textColorHighlight="#FFFFFF"android:textColorLink="#FFFFFF"android:textSize="13dp"android:topLeftRadius="20dp"android:topRightRadius="20dp"android:typeface="sans" /> -->
+
+
+    <Button android:layout_height="31dp" android:layout_width="147dp" android:id="@+id/verification" android:textSize="13dp" android:textColor="#ffffff" android:layout_below="@+id/View_contact" android:typeface="sans" android:topRightRadius="20dp" android:topLeftRadius="20dp" android:text="Payment" android:scaleType="centerCrop" android:bottomRightRadius="20dp" android:bottomLeftRadius="20dp" android:background="@drawable/round" android:layout_marginRight="133dp" android:layout_marginEnd="133dp" android:layout_marginTop="82dp" android:layout_marginLeft="131dp" android:layout_marginStart="131dp" android:layout_alignParentRight="true" android:layout_alignParentEnd="true" android:layout_alignParentLeft="true" android:layout_alignParentStart="true" android:textColorLink="#FFFFFF" android:textColorHighlight="#FFFFFF"/>
+
+</RelativeLayout>
+
+    <TextView android:layout_height="54dp" android:layout_width="match_parent" android:id="@+id/View_rec" android:textSize="20dp" android:textColor="@android:color/background_dark" android:paddingRight="@dimen/hotel_title_padding" android:paddingTop="20dp" android:paddingLeft="@dimen/hotel_title_padding" android:paddingBottom="@dimen/hotel_rating_padding_bottom" android:text="Recommendations" android:layout_marginTop="10dp"/>
+
+    <include layout="@layout/rec_content_main"/>
+
+</LinearLayout>
+
+</ScrollView>

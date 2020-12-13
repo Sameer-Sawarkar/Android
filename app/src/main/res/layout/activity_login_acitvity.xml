@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backmain"
+    android:fitsSystemWindows="true">
+
+
+    <TextView
+        android:layout_width="222dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="true"
+
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="398dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginRight="96dp"
+        android:gravity="center"
+        android:hint="type here"
+        android:text="Dont Have an account? "
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="275dp"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="114dp"
+        android:gravity="center"
+        android:hint="type here"
+        android:text="Hostel Guide"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/Email"
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        android:backgroundTint="#7e7e7e"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Email "
+        android:inputType="textPersonName"
+        android:textAlignment="textStart"
+        tools:ignore="RtlCompat"
+        android:text=""
+        />
+
+    <EditText
+        android:id="@+id/Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPhone"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="51dp"
+        android:backgroundTint="#7e7e7e"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Password "
+        android:inputType="textPersonName"
+        android:password="true"
+        android:text=""
+        android:textAlignment="textStart"
+
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        android:id="@+id/button"
+        android:textColor="#ffffff"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:text="Login"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="149dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtPassword"
+        android:layout_marginTop="500dp"
+        android:text="Go to SignUp"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="#ffffff" />
+
+
+</RelativeLayout>
