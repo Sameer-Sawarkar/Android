@@ -146,9 +146,9 @@ public class LoginAcitvity extends AppCompatActivity {
         }
 
         backPressTime = System.currentTimeMillis();
-        finish();
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(1);
+        //finish();
+        //android.os.Process.killProcess(android.os.Process.myPid());
+        //System.exit(1);
     }
 
     /*//decryption code

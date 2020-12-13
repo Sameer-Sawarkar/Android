@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(getApplicationContext(),LoginAcitvity.class));
-                finish();
+                finishAffinity();;
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
