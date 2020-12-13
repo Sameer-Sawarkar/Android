@@ -24,6 +24,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import com.example.hostel.R;
 
 import com.example.hostel.Adapters.HotelsAdapter;
 import com.example.hostel.Decoration.GridSpacingItemDecoration;
@@ -32,6 +33,7 @@ import com.example.hostel.Util.CurrentUser;
 import com.example.hostel.Util.Hotel;
 import com.example.hostel.Util.HotelView;
 import com.example.hostel.Util.Reader;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -199,13 +201,13 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.show_bookings:
                 Bookings booking = getBooked();
-                List<Hotel> hotels = Reader.getRestaurantList(getApplicationContext());
+                ArrayList<Bookings> hotels = Reader.getBookingsList(getApplicationContext());
                 if(booking==null)
                     Toast.makeText(getApplicationContext(),"No Bookings for you",Toast.LENGTH_LONG).show();
                 else {
                     List<Integer> ids = booking.getId();
                     String res = "";
-                    for(Hotel h : hotels) {
+                    for(Bookings h : hotels) {
 
                         if(ids.contains(h.getId())) {
                             res = h.getName();
@@ -219,12 +221,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.Logout:
-                Intent intent3 = new Intent(this,LoginAcitvity.class);
-                startActivity(intent3);
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),LoginAcitvity.class));
                 finish();
-                //moveTaskToBack(true);
-                //android.os.Process.killProcess(android.os.Process.myPid());
-                //System.exit(1);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

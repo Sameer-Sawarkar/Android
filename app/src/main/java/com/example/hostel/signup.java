@@ -1,9 +1,11 @@
 package com.example.hostel;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hostel.Util.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.DataSnapshot;
@@ -26,78 +32,81 @@ import javax.crypto.spec.SecretKeySpec;
 
 
 public class signup extends AppCompatActivity {
-    EditText edtPhone,editPassword,edtName;
-    EditText editEmail; /// Shriyash code ignore this
-
-    Button signUpButton;
-    public int phone;
-    String AES = "AES";
-    String encryptedText;
-
-
-
+    EditText edtPhone,editPassword,edtName, edtEmail;
+    FirebaseAuth fAuth;
+    Button signUpButton, loginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
         edtName = (EditText) findViewById(R.id.edtName);
-        edtPhone = (EditText) findViewById(R.id.edtPhone);   /// Shriyash code ignore this                                  // initializing variables
+        edtPhone = (EditText) findViewById(R.id.edtPhone);
+        edtEmail = (EditText) findViewById(R.id.edtEmail);
         editPassword = (EditText) findViewById(R.id.edtPassword);
-        edtPhone = (EditText) findViewById(R.id.edtPhone);  /// Shriyash code ignore this                           //
         signUpButton = (Button) findViewById(R.id.btnSignUp);
+        loginButton=(Button) findViewById(R.id.btnLogin);
+        fAuth = FirebaseAuth.getInstance();
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        /*final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("user");
         try {
             encryptedText = encrypt(editPassword.getText().toString(),edtPhone.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
+        }*/
+
+        if(fAuth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
         }
 
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
-
-
             @Override
             public void onClick (View v){
+                String password = editPassword.getText().toString().trim();
+                String email = edtEmail.getText().toString().trim();
 
+                if(TextUtils.isEmpty(email)) {
+                    edtEmail.setError("Email is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(password)) {
+                    editPassword.setError("Phone is required");
+                    return;
+                }
+                if(password.length()<5) {
+                    editPassword.setError("Password must be >5 characters");
+                    return;
+                }
 
-                final ValueEventListener valueEventListener = table_user.addValueEventListener(new ValueEventListener() {
+                //register the user into firebase
+                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        //check if already userphone
-                        if (dataSnapshot.child(edtPhone.getText().toString()).exists()) {
-                            Toast.makeText(signup.this, "Phone number already exist!!", Toast.LENGTH_SHORT).show();
-                        } else {
-//                            User user = new User(edtName.getText().toString(), editPassword.getText().toString(), edtPhone.getText().toString());
-                            User user = new User(edtName.getText().toString(), encryptedText, edtPhone.getText().toString());
-
-                            table_user.child(edtPhone.getText().toString()).setValue(user);
-                            Toast.makeText(signup.this, "Sign up successful!!", Toast.LENGTH_SHORT).show();
-                            Intent loginpage = new Intent( signup.this, LoginAcitvity.class);
-                            startActivity(loginpage);
-                            finish();
-
-
-
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(signup.this, "User Created", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }else {
+                            Toast.makeText(signup.this, "Error!"+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
-                    }
-
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
                     }
                 });
             }
-
         });
 
-
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LoginAcitvity.class));
+            }
+        });
     }
 
-    //encryption code
+
+
+    /*//encryption code
     private String encrypt(String Data, String notes_password) throws Exception{
         SecretKey key = generateKey(notes_password);
         Cipher c = Cipher.getInstance(AES);
@@ -115,5 +124,5 @@ public class signup extends AppCompatActivity {
         byte[] key = digest.digest();
         SecretKey secretKeySpec =  new SecretKeySpec(key, "AES");
         return secretKeySpec;
-    }
+    }*/
 }

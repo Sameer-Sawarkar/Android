@@ -33,10 +33,6 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
     @Override
     public void onBindViewHolder(SliderAdapterVH viewHolder, final int position) {
-
-
-
-
         switch (position) {
             case 0:
                 Glide.with(viewHolder.itemView)
@@ -68,8 +64,6 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
 
         View itemView;
         ImageView imageViewBackground;
-        ImageView imageGifContainer;
-        TextView textViewDescription;
 
         public SliderAdapterVH(View itemView) {
             super(itemView);
@@ -77,6 +71,4 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderAdapter
             this.itemView = itemView;
         }
     }
-
-
 }

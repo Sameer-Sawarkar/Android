@@ -5,77 +5,90 @@ package com.example.hostel;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.hostel.Util.CurrentUser;
-import com.example.hostel.Util.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
-import java.security.MessageDigest;
-
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 
 public class LoginAcitvity extends AppCompatActivity {
     private long backPressTime;
-    String AES = "AES",fdecryPass;
-    String decryptedPass;
-    EditText edtPhone,edtPassword;
-    Button login,gotosignup;
-    FirebaseDatabase database;
+    EditText edtEmail,editPassword;
+    Button login, gotosignup;
+    FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_acitvity);
 
-
-        edtPhone = (EditText)findViewById(R.id.edtPhone);
-        edtPassword = (EditText)findViewById(R.id.edtPassword);
+        edtEmail = (EditText)findViewById(R.id.Email);
+        editPassword = (EditText)findViewById(R.id.Password);
         login = (Button)findViewById(R.id.button);
-
         gotosignup = (Button)findViewById(R.id.button2);
-        //Init Firebase
+        fAuth = FirebaseAuth.getInstance();
+
+        /*//Init Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("user");
-
         try {
              decryptedPass = decrypt(edtPassword.getText().toString(), edtPhone.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+
+
 
 
         gotosignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent gotosignuppage = new Intent(LoginAcitvity.this, signup.class);
-                startActivity(gotosignuppage);
-                finish();
-
+                startActivity(new Intent(getApplicationContext(),signup.class));
             }
         });
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String password = editPassword.getText().toString().trim();
+                String email = edtEmail.getText().toString().trim();
 
-                table_user.addValueEventListener(new ValueEventListener() {
+                if(TextUtils.isEmpty(email)) {
+                    edtEmail.setError("Email is required");
+                    return;
+                }
+                if(TextUtils.isEmpty(password)) {
+                    editPassword.setError("Phone is required");
+                    return;
+                }
+                if(password.length()<5) {
+                    editPassword.setError("Password must be >5 characters");
+                    return;
+                }
 
+                //authenticate the user
+                fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(LoginAcitvity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }else {
+                            Toast.makeText(LoginAcitvity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
+                        }
+                    }
+                });
+
+                /*table_user.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         //check if user not exist in database
@@ -95,7 +108,7 @@ public class LoginAcitvity extends AppCompatActivity {
                                 //Intent MainPage = new Intent( LoginAcitvity.this, MainActivity.class);
                                 //common.currentUser = user;
                                 //startActivity(MainPage);
-                                Toast.makeText(getApplicationContext(), "Sign in Successfullly !", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Logged in Successfullly !", Toast.LENGTH_SHORT).show();
                                 finish();
                                 //Toast.makeText(getApplicationContext(), "Sign in Successfullly !", Toast.LENGTH_SHORT).show();
                                 user.setPhoneNumber(edtPhone.getText().toString());
@@ -117,7 +130,7 @@ public class LoginAcitvity extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
 
                     }
-                });
+                });*/
             }
         });
 
@@ -133,9 +146,11 @@ public class LoginAcitvity extends AppCompatActivity {
         }
 
         backPressTime = System.currentTimeMillis();
+        //android.os.Process.killProcess(android.os.Process.myPid());
+        //System.exit(1);
     }
 
-    //decryption code
+    /*//decryption code
     private String decrypt(String outputstring, String Password) throws Exception {
         SecretKey key = generateKey(Password);
         Cipher c = Cipher.getInstance(AES);
@@ -154,5 +169,5 @@ public class LoginAcitvity extends AppCompatActivity {
         byte[] key = digest.digest();
         SecretKey secretKeySpec =  new SecretKeySpec(key, "AES");
         return secretKeySpec;
-    }
+    }*/
 }

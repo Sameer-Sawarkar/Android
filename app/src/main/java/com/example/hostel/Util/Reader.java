@@ -48,18 +48,7 @@ public class Reader {
         }
         return null;
     }
-    public static User getUserList(Context context){
-        ObjectMapper mapper = new ObjectMapper();
-        String json = loadJSONFromAsset(context, "users.json");
-        try{
-            return (mapper.readValue(json, User.class));
 
-
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-        return null;
-    }
     public static ArrayList<Bookings> getBookingsList(Context context) {
         ObjectMapper mapper = new ObjectMapper();
         SharedPreferences pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode
@@ -73,26 +62,6 @@ public class Reader {
                 bookinglist = Arrays.asList(mapper.readValue(json, Bookings[].class));
                 ArrayList<Bookings> bookings = new ArrayList<Bookings>(bookinglist);
                 return bookings;
-
-            } catch (IOException e) {
-                System.out.println(e);
-            }
-        }
-        return null;
-    }
-    public static ArrayList<Drafts> getDraftsList(Context context) {
-        ObjectMapper mapper = new ObjectMapper();
-        SharedPreferences pref = context.getSharedPreferences("MyPref", 0); // 0 - for private mode
-        SharedPreferences.Editor editor = pref.edit();
-        String json = pref.getString("drafts", "xyz");
-        if (json.equals("xyz")) return null;
-        else {
-            try {
-
-                List<Drafts> draftlist = new ArrayList<>();
-                draftlist = Arrays.asList(mapper.readValue(json, Drafts[].class));
-                ArrayList<Drafts> drafts = new ArrayList<Drafts>(draftlist);
-                return drafts;
 
             } catch (IOException e) {
                 System.out.println(e);
