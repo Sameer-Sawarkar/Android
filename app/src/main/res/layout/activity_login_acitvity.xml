@@ -11,16 +11,16 @@
     <TextView
         android:layout_width="222dp"
         android:layout_height="37dp"
-        android:layout_centerHorizontal="true"
-
         android:layout_alignParentStart="true"
+
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="93dp"
         android:layout_marginLeft="93dp"
-        android:layout_marginTop="490dp"
+        android:layout_marginTop="398dp"
         android:layout_marginEnd="96dp"
         android:layout_marginRight="96dp"
         android:gravity="center"
@@ -45,7 +45,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/edtPhone"
+        android:id="@+id/Email"
         android:textColor="#ffffff"
         android:textColorHint="#bababa"
         android:backgroundTint="#7e7e7e"
@@ -59,7 +59,7 @@
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Phone Number"
+        android:hint="Email "
         android:inputType="textPersonName"
         android:textAlignment="textStart"
         tools:ignore="RtlCompat"
@@ -67,27 +67,27 @@
         />
 
     <EditText
-        android:id="@+id/edtPassword"
-        android:textColor="#ffffff"
-        android:textColorHint="#bababa"
-        android:backgroundTint="#7e7e7e"
+        android:id="@+id/Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtPhone"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="245dp"
+        android:layout_marginEnd="51dp"
+        android:backgroundTint="#7e7e7e"
         android:ems="10"
         android:gravity="center"
         android:hint="Password "
         android:inputType="textPersonName"
         android:password="true"
-
+        android:text=""
         android:textAlignment="textStart"
-        tools:ignore="RtlCompat"
-        android:text="" />
+
+        android:textColor="#ffffff"
+        android:textColorHint="#bababa"
+        tools:ignore="RtlCompat" />
 
     <Button
         android:id="@+id/button"
@@ -96,7 +96,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtPassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="300dp"
         android:text="Login"/>
 
     <Button
@@ -104,7 +104,7 @@
         android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edtPassword"
-        android:layout_marginTop="255dp"
+        android:layout_marginTop="500dp"
         android:text="Go to SignUp"
         android:layout_centerHorizontal="true"
 

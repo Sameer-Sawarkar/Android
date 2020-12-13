@@ -26,7 +26,6 @@ public class User {
     private String Password;
     private String phone_number;
 
-    //private String Notes;
 
     public User() {
 

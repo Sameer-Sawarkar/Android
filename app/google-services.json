@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "326403689698",
-    "firebase_url": "https://hostelguide-ac093.firebaseio.com",
-    "project_id": "hostelguide-ac093",
-    "storage_bucket": "hostelguide-ac093.appspot.com"
+    "project_number": "994172973900",
+    "project_id": "hostel-597e2",
+    "storage_bucket": "hostel-597e2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:326403689698:android:27b210f69af9974b0322bb",
+        "mobilesdk_app_id": "1:994172973900:android:f7e60b04328c7014bdd5e9",
         "android_client_info": {
           "package_name": "com.example.hostel"
         }
       },
       "oauth_client": [
         {
-          "client_id": "326403689698-adr9m0dop60uniec7iv2gcdsej1fmh6u.apps.googleusercontent.com",
+          "client_id": "994172973900-mlpqip2tcmghcf4dvk04fdahha2pfopk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAU4l0L9mIThm4WH6vjrJUNWZr71rZ-Wu0"
+          "current_key": "AIzaSyDJAvhIeIthC0jcyljc4NR87UCBxSNTmXw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "326403689698-adr9m0dop60uniec7iv2gcdsej1fmh6u.apps.googleusercontent.com",
+              "client_id": "994172973900-mlpqip2tcmghcf4dvk04fdahha2pfopk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

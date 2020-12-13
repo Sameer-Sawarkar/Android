@@ -2,6 +2,7 @@ package com.example.hostel;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,12 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class VerifyOTPActivity extends AppCompatActivity {
+public class VerifyOTPActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText inputCode1, inputCode2, inputCode3, inputCode4, inputCode5, inputCode6;
-    private String fixedOTP="111111";
-    private Button Verify;
-    private String inputOtp="";
+    Button verify;
+    String s1,s2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +34,14 @@ public class VerifyOTPActivity extends AppCompatActivity {
         inputCode4 = findViewById(R.id.inputCode4);
         inputCode5 = findViewById(R.id.inputCode5);
         inputCode6 = findViewById(R.id.inputCode6);
-        Verify = findViewById(R.id.buttonVerify);
+        verify = findViewById(R.id.buttonVerify);
+
+        verify.setOnClickListener(this);
 
         setupOTPInputs();
-        //verifyOTP();
     }
 
     private void setupOTPInputs(){
-
         inputCode1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -51,10 +51,9 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
                     inputCode2.requestFocus();
-
                 }
+                s1+=s.toString();
 
             }
 
@@ -72,10 +71,9 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
                     inputCode3.requestFocus();
-
                 }
+                s2+=s.toString();
 
             }
 
@@ -93,9 +91,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
                     inputCode4.requestFocus();
-
                 }
 
             }
@@ -114,9 +110,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
                     inputCode5.requestFocus();
-
                 }
 
             }
@@ -135,30 +129,7 @@ public class VerifyOTPActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int i, int i1, int i2) {
                 if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
                     inputCode6.requestFocus();
-                    //Toast.makeText(VerifyOTPActivity.this, inputOtp, Toast.LENGTH_SHORT).show();
-                }
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-        inputCode6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int i, int i1, int i2) {
-                if(!s.toString().trim().isEmpty()){
-                    inputOtp +=s.toString();
-                    //inputCode6.requestFocus();
-                    //Toast.makeText(VerifyOTPActivity.this, inputOtp, Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -169,26 +140,21 @@ public class VerifyOTPActivity extends AppCompatActivity {
             }
         });
 
-        Verify.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(fixedOTP.equals(inputOtp)){
-                    Toast.makeText(VerifyOTPActivity.this, "OTP Verified Successfully!", Toast.LENGTH_SHORT).show();
-                    //Intent intent2 = new Intent(VerifyOTPActivity.this, HotelViewer.class);
-                    //startActivity(intent2);
-                    inputOtp="";
 
-                }
-                else{
-                    Toast.makeText(VerifyOTPActivity.this, "Incorrect OTP! Please Try Again.", Toast.LENGTH_SHORT).show();
-                    inputOtp ="";
-                }
-
-            }
-        });
     }
 
-    private void verifyOTP(){
-
+    @Override
+    public void onClick(View view) {
+        if(s1.equals(s2))
+        {
+            Toast.makeText(getApplicationContext(),"Verified Successfully!!!",Toast.LENGTH_LONG).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(),"Wrong OTP",Toast.LENGTH_LONG).show();
+        }
+        Intent intent4 = new Intent(VerifyOTPActivity.this,HotelViewer.class);
+        startActivity(intent4);
+        //moveTaskToBack(true);
+        finish();
     }
 }
